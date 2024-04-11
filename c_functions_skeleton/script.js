@@ -1,4 +1,3 @@
-
 /* 
   ftnSalutation is a conventional JS function
   it returns an array of strings where each
@@ -6,8 +5,9 @@
   of the salutations to pupulate inputSelect
   found in index.html
 */
-function ftnSalutation(){
+function ftnSalutation() {
   //  implement your statement(s) here
+  return new Array('Mr.', 'Mrs.', 'Dr.')
 }
 
 /* 
@@ -17,7 +17,9 @@ function ftnSalutation(){
   calls it
 */
 const ftnGreeting = (salutation, user) => {
-    //  implement your statement(s) here
+  //  implement your statement(s) here
+  const msg = 'Hi ' + salutation + ' ' + user + '.'
+  return msg
 }
 
 /*
@@ -29,3 +31,31 @@ Hint:
 - validateInputs returns false if either choice or name is incorrectly filled
 - validateInputs returns true if both choice and name are correctly filled
 */
+function validateInputs(choice, name = '') {
+  if (choice && name !== '' && name !== undefined) {
+    return true
+  } else {
+    return false
+  }
+}
+
+function ftnRadioMeal(meal) {
+  document.getElementById('displayPreference').textContent = meal
+}
+
+switch (meal) {
+  case 'None':
+    document.getElementById('displayPreference').textContent =
+      'No preference selected'
+    break
+  case 'Beef':
+    document.getElementById('displayPreference').textContent = 'Mcdonald'
+    break
+  case 'Chikin':
+    document.getElementById('displayPreference').textContent = 'KFC'
+    break
+  default:
+    document.getElementById('displayPreference').textContent =
+      'We will contact you seperately'
+    break
+}
