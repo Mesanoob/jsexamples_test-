@@ -16,9 +16,9 @@ function ftnSalutation() {
   a greeting to be returned to the function that
   calls it
 */
-const ftnGreeting = (salutation, user) => {
+const ftnGreeting = (salutation, user, meal) => {
   //  implement your statement(s) here
-  const msg = 'Hi ' + salutation + ' ' + user + '.'
+  const msg = 'Hi ' + salutation + ' ' + user + '.' + meal
   return msg
 }
 

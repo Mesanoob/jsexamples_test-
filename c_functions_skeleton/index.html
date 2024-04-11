@@ -99,8 +99,24 @@
       const uName = document.getElementById("inputName").value;
 
       const validated = validateInputs(selectedChoice, uName);
+      const mealPreference = document.getElementsByName("inlineRadioMeal");
 
-      if (validated) {
+      let mealSelected = false;
+
+      for (let index = 0; index < mealPreference.length; index++) {
+        if(mealPreference[index].checked){
+          mealSelected = true;
+          break;
+        }
+      }
+
+      if(!mealSelected){
+      return alert("Please complete all inputs");
+      } 
+
+
+
+      if (validated && mealSelected) {
         const result = ftnGreeting(selectedChoice, uName);
         alert(result);
       } else {
